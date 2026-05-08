@@ -1,0 +1,763 @@
+aflincomp@aflincomp:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.8G     0  1.8G   0% /dev
+tmpfs           377M  1.5M  375M   1% /run
+/dev/sda5        24G  9.4G   14G  42% /
+tmpfs           1.9G     0  1.9G   0% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/loop0       55M   55M     0 100% /snap/core18/1705
+/dev/loop2      128K  128K     0 100% /snap/bare/5
+/dev/loop1       56M   56M     0 100% /snap/core18/2999
+/dev/loop3       74M   74M     0 100% /snap/core22/2411
+/dev/loop4      219M  219M     0 100% /snap/gnome-3-34-1804/93
+/dev/loop5      241M  241M     0 100% /snap/gnome-3-34-1804/24
+/dev/loop6      532M  532M     0 100% /snap/gnome-42-2204/247
+/dev/loop7       63M   63M     0 100% /snap/gtk-common-themes/1506
+/dev/loop10      13M   13M     0 100% /snap/snap-store/1216
+/dev/loop8       92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop9       50M   50M     0 100% /snap/snap-store/433
+/dev/loop11      49M   49M     0 100% /snap/snapd/26382
+/dev/sda1       511M  4.0K  511M   1% /boot/efi
+DRIRECT_VM      443G  293G  150G  67% /media/sf_DRIRECT_VM
+tmpfs           377M   36K  376M   1% /run/user/1000
+aflincomp@aflincomp:~$ df -Th
+Filesystem     Type      Size  Used Avail Use% Mounted on
+udev           devtmpfs  1.8G     0  1.8G   0% /dev
+tmpfs          tmpfs     377M  1.5M  375M   1% /run
+/dev/sda5      ext4       24G  9.4G   14G  42% /
+tmpfs          tmpfs     1.9G     0  1.9G   0% /dev/shm
+tmpfs          tmpfs     5.0M  4.0K  5.0M   1% /run/lock
+tmpfs          tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/loop0     squashfs   55M   55M     0 100% /snap/core18/1705
+/dev/loop2     squashfs  128K  128K     0 100% /snap/bare/5
+/dev/loop1     squashfs   56M   56M     0 100% /snap/core18/2999
+/dev/loop3     squashfs   74M   74M     0 100% /snap/core22/2411
+/dev/loop4     squashfs  219M  219M     0 100% /snap/gnome-3-34-1804/93
+/dev/loop5     squashfs  241M  241M     0 100% /snap/gnome-3-34-1804/24
+/dev/loop6     squashfs  532M  532M     0 100% /snap/gnome-42-2204/247
+/dev/loop7     squashfs   63M   63M     0 100% /snap/gtk-common-themes/1506
+/dev/loop10    squashfs   13M   13M     0 100% /snap/snap-store/1216
+/dev/loop8     squashfs   92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop9     squashfs   50M   50M     0 100% /snap/snap-store/433
+/dev/loop11    squashfs   49M   49M     0 100% /snap/snapd/26382
+/dev/sda1      vfat      511M  4.0K  511M   1% /boot/efi
+DRIRECT_VM     vboxsf    443G  293G  150G  67% /media/sf_DRIRECT_VM
+tmpfs          tmpfs     377M   36K  376M   1% /run/user/1000
+aflincomp@aflincomp:~$ df -ih
+Filesystem     Inodes IUsed IFree IUse% Mounted on
+udev             459K   482  458K    1% /dev
+tmpfs            471K   874  470K    1% /run
+/dev/sda5        1.6M  199K  1.4M   13% /
+tmpfs            471K     1  471K    1% /dev/shm
+tmpfs            471K     5  471K    1% /run/lock
+tmpfs            471K    19  471K    1% /sys/fs/cgroup
+/dev/loop0        11K   11K     0  100% /snap/core18/1705
+/dev/loop2         29    29     0  100% /snap/bare/5
+/dev/loop1        11K   11K     0  100% /snap/core18/2999
+/dev/loop3        14K   14K     0  100% /snap/core22/2411
+/dev/loop4        19K   19K     0  100% /snap/gnome-3-34-1804/93
+/dev/loop5        26K   26K     0  100% /snap/gnome-3-34-1804/24
+/dev/loop6        21K   21K     0  100% /snap/gnome-42-2204/247
+/dev/loop7        61K   61K     0  100% /snap/gtk-common-themes/1506
+/dev/loop10      1.9K  1.9K     0  100% /snap/snap-store/1216
+/dev/loop8        75K   75K     0  100% /snap/gtk-common-themes/1535
+/dev/loop9        16K   16K     0  100% /snap/snap-store/433
+/dev/loop11       617   617     0  100% /snap/snapd/26382
+/dev/sda1           0     0     0     - /boot/efi
+DRIRECT_VM       1000 -976K  977K     - /media/sf_DRIRECT_VM
+tmpfs            471K    92  470K    1% /run/user/1000
+aflincomp@aflincomp:~$ df -hT --exclude-type=tmpfs --exclude-type=devtmpfs
+Filesystem     Type      Size  Used Avail Use% Mounted on
+/dev/sda5      ext4       24G  9.4G   14G  42% /
+/dev/loop0     squashfs   55M   55M     0 100% /snap/core18/1705
+/dev/loop2     squashfs  128K  128K     0 100% /snap/bare/5
+/dev/loop1     squashfs   56M   56M     0 100% /snap/core18/2999
+/dev/loop3     squashfs   74M   74M     0 100% /snap/core22/2411
+/dev/loop4     squashfs  219M  219M     0 100% /snap/gnome-3-34-1804/93
+/dev/loop5     squashfs  241M  241M     0 100% /snap/gnome-3-34-1804/24
+/dev/loop6     squashfs  532M  532M     0 100% /snap/gnome-42-2204/247
+/dev/loop7     squashfs   63M   63M     0 100% /snap/gtk-common-themes/1506
+/dev/loop10    squashfs   13M   13M     0 100% /snap/snap-store/1216
+/dev/loop8     squashfs   92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop9     squashfs   50M   50M     0 100% /snap/snap-store/433
+/dev/loop11    squashfs   49M   49M     0 100% /snap/snapd/26382
+/dev/sda1      vfat      511M  4.0K  511M   1% /boot/efi
+DRIRECT_VM     vboxsf    443G  293G  150G  67% /media/sf_DRIRECT_VM
+aflincomp@aflincomp:~$ du -sh *
+4.0K	Desktop
+101M	disk1.img
+101M	disk2.img
+101M	disk3.img
+101M	disk4.img
+4.0K	Documents
+4.0K	Downloads
+4.0K	Music
+6.2M	Pictures
+4.0K	Public
+4.0K	rawcode_file.sh.save
+32K	security
+8.1M	snap
+4.0K	Templates
+4.0K	Videos
+aflincomp@aflincomp:~$ du -sh * | sort -rh
+101M	disk4.img
+101M	disk3.img
+101M	disk2.img
+101M	disk1.img
+8.1M	snap
+6.2M	Pictures
+32K	security
+4.0K	Videos
+4.0K	Templates
+4.0K	rawcode_file.sh.save
+4.0K	Public
+4.0K	Music
+4.0K	Downloads
+4.0K	Documents
+4.0K	Desktop
+aflincomp@aflincomp:~$ sudo du -ah /var 2>/dev/null | sort -rh | head -10
+[sudo] password for aflincomp: 
+2.4G	/var
+1.8G	/var/lib
+1.5G	/var/lib/snapd
+1.1G	/var/lib/snapd/cache
+532M	/var/lib/snapd/cache/bece47eaffcab46af8b7ec79322cdf6d6aa8f3ffaaa5b1f51e4dcec1333e33b6840775d7fbc4736d74ddfcbec1e8d58a
+408M	/var/lib/snapd/snaps
+306M	/var/cache
+295M	/var/lib/apt/lists
+295M	/var/lib/apt
+259M	/var/cache/apt
+aflincomp@aflincomp:~$ sudo du -h --max-depth=2 / 2>/dev/null | sort -rh | head -15
+15G	/
+4.9G	/usr
+4.7G	/snap
+3.6G	/usr/lib
+2.4G	/var
+1.8G	/var/lib
+1.8G	/snap/gnome-3-34-1804
+1.4G	/snap/gnome-42-2204
+891M	/home/aflincomp
+891M	/home
+859M	/usr/share
+672M	/snap/gtk-common-themes
+337M	/snap/core18
+306M	/var/cache
+274M	/usr/src
+aflincomp@aflincomp:~$ df -h /
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda5        24G  9.4G   14G  42% /
+
+aflincomp@aflincomp:~$ sudo du -sh /
+du: cannot access '/proc/4026/task/4026/fd/4': No such file or directory
+du: cannot access '/proc/4026/task/4026/fdinfo/4': No such file or directory
+du: cannot access '/proc/4026/fd/3': No such file or directory
+du: cannot access '/proc/4026/fdinfo/3': No such file or directory
+du: cannot access '/run/user/1000/doc': Permission denied
+du: cannot access '/run/user/1000/gvfs': Permission denied
+15G	/
+aflincomp@aflincomp:~$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,noexec,relatime,size=1877456k,nr_inodes=469364,mode=755,inode64)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,noexec,relatime,size=385060k,mode=755,inode64)
+/dev/sda5 on / type ext4 (rw,relatime,errors=remount-ro)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,inode64)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k,inode64)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755,inode64)
+cgroup2 on /sys/fs/cgroup/unified type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/rdma type cgroup (rw,nosuid,nodev,noexec,relatime,rdma)
+cgroup on /sys/fs/cgroup/misc type cgroup (rw,nosuid,nodev,noexec,relatime,misc)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=28,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=15785)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,pagesize=2M)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,nosuid,nodev,noexec,relatime)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+/var/lib/snapd/snaps/core18_1705.snap on /snap/core18/1705 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/bare_5.snap on /snap/bare/5 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/core18_2999.snap on /snap/core18/2999 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/core22_2411.snap on /snap/core22/2411 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-34-1804_93.snap on /snap/gnome-3-34-1804/93 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-34-1804_24.snap on /snap/gnome-3-34-1804/24 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-42-2204_247.snap on /snap/gnome-42-2204/247 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/gtk-common-themes_1506.snap on /snap/gtk-common-themes/1506 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/snap-store_1216.snap on /snap/snap-store/1216 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/gtk-common-themes_1535.snap on /snap/gtk-common-themes/1535 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/snap-store_433.snap on /snap/snap-store/433 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/snapd_26382.snap on /snap/snapd/26382 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,nosuid,nodev,noexec,relatime)
+/dev/sda1 on /boot/efi type vfat (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+DRIRECT_VM on /media/sf_DRIRECT_VM type vboxsf (rw,nodev,relatime,iocharset=utf8,uid=0,gid=999,dmode=0770,fmode=0770,tag=VBoxAutomounter)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=385056k,mode=700,uid=1000,gid=1000,inode64)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+/dev/fuse on /run/user/1000/doc type fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+tmpfs on /run/snapd/ns type tmpfs (rw,nosuid,nodev,noexec,relatime,size=385060k,mode=755,inode64)
+nsfs on /run/snapd/ns/snap-store.mnt type nsfs (rw)
+tracefs on /sys/kernel/debug/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+aflincomp@aflincomp:~$ findmnt --tree
+TARGET                                SOURCE                 FSTYPE          OPTIONS
+/                                     /dev/sda5              ext4            rw,relatime,errors=remount-ro
+├─/sys                                sysfs                  sysfs           rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/security              securityfs             securityfs      rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/cgroup                    tmpfs                  tmpfs           ro,nosuid,nodev,noexec,mode=755,inode64
+│ │ ├─/sys/fs/cgroup/unified          cgroup2                cgroup2         rw,nosuid,nodev,noexec,relatime,nsdelegate
+│ │ ├─/sys/fs/cgroup/systemd          cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,xattr,name=systemd
+│ │ ├─/sys/fs/cgroup/freezer          cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,freezer
+│ │ ├─/sys/fs/cgroup/pids             cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,pids
+│ │ ├─/sys/fs/cgroup/cpu,cpuacct      cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,cpu,cpuacct
+│ │ ├─/sys/fs/cgroup/perf_event       cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,perf_event
+│ │ ├─/sys/fs/cgroup/devices          cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,devices
+│ │ ├─/sys/fs/cgroup/rdma             cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,rdma
+│ │ ├─/sys/fs/cgroup/misc             cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,misc
+│ │ ├─/sys/fs/cgroup/hugetlb          cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,hugetlb
+│ │ ├─/sys/fs/cgroup/memory           cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,memory
+│ │ ├─/sys/fs/cgroup/net_cls,net_prio cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,net_cls,net_prio
+│ │ ├─/sys/fs/cgroup/cpuset           cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,cpuset
+│ │ └─/sys/fs/cgroup/blkio            cgroup                 cgroup          rw,nosuid,nodev,noexec,relatime,blkio
+│ ├─/sys/fs/pstore                    pstore                 pstore          rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/bpf                       bpf                    bpf             rw,nosuid,nodev,noexec,relatime,mode=700
+│ ├─/sys/kernel/debug                 debugfs                debugfs         rw,nosuid,nodev,noexec,relatime
+│ │ └─/sys/kernel/debug/tracing       tracefs                tracefs         rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/tracing               tracefs                tracefs         rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/fuse/connections          fusectl                fusectl         rw,nosuid,nodev,noexec,relatime
+│ └─/sys/kernel/config                configfs               configfs        rw,nosuid,nodev,noexec,relatime
+├─/proc                               proc                   proc            rw,nosuid,nodev,noexec,relatime
+│ └─/proc/sys/fs/binfmt_misc          systemd-1              autofs          rw,relatime,fd=28,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=15785
+│   └─/proc/sys/fs/binfmt_misc        binfmt_misc            binfmt_misc     rw,nosuid,nodev,noexec,relatime
+├─/dev                                udev                   devtmpfs        rw,nosuid,noexec,relatime,size=1877456k,nr_inodes=469364,mode=755,inode64
+│ ├─/dev/pts                          devpts                 devpts          rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000
+│ ├─/dev/shm                          tmpfs                  tmpfs           rw,nosuid,nodev,inode64
+│ ├─/dev/mqueue                       mqueue                 mqueue          rw,nosuid,nodev,noexec,relatime
+│ └─/dev/hugepages                    hugetlbfs              hugetlbfs       rw,relatime,pagesize=2M
+├─/run                                tmpfs                  tmpfs           rw,nosuid,nodev,noexec,relatime,size=385060k,mode=755,inode64
+│ ├─/run/lock                         tmpfs                  tmpfs           rw,nosuid,nodev,noexec,relatime,size=5120k,inode64
+│ ├─/run/user/1000                    tmpfs                  tmpfs           rw,nosuid,nodev,relatime,size=385056k,mode=700,uid=1000,gid=1000,inode64
+│ │ ├─/run/user/1000/gvfs             gvfsd-fuse             fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│ │ └─/run/user/1000/doc              /dev/fuse              fuse            rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│ └─/run/snapd/ns                     tmpfs[/snapd/ns]       tmpfs           rw,nosuid,nodev,noexec,relatime,size=385060k,mode=755,inode64
+│   └─/run/snapd/ns/snap-store.mnt    nsfs[mnt:[4026532487]] nsfs            rw
+├─/snap/core18/1705                   /dev/loop0             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/bare/5                        /dev/loop2             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/core18/2999                   /dev/loop1             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/core22/2411                   /dev/loop3             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/gnome-3-34-1804/93            /dev/loop4             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/gnome-3-34-1804/24            /dev/loop5             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/gnome-42-2204/247             /dev/loop6             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/gtk-common-themes/1506        /dev/loop7             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/snap-store/1216               /dev/loop10            squashfs        ro,nodev,relatime,errors=continue
+├─/snap/gtk-common-themes/1535        /dev/loop8             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/snap-store/433                /dev/loop9             squashfs        ro,nodev,relatime,errors=continue
+├─/snap/snapd/26382                   /dev/loop11            squashfs        ro,nodev,relatime,errors=continue
+├─/boot/efi                           /dev/sda1              vfat            rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro
+└─/media/sf_DRIRECT_VM                DRIRECT_VM             vboxsf          rw,nodev,relatime,iocharset=utf8,uid=0,gid=999,dmode=0770,fmode=0770,tag=VBoxAutomounter
+aflincomp@aflincomp:~$ findmnt --output SOURCE,TARGET,FSTYPE,OPTIONS /
+SOURCE    TARGET FSTYPE OPTIONS
+/dev/sda5 /      ext4   rw,relatime,errors=remount-ro
+aflincomp@aflincomp:~$ cat /proc/mounts
+sysfs /sys sysfs rw,nosuid,nodev,noexec,relatime 0 0
+proc /proc proc rw,nosuid,nodev,noexec,relatime 0 0
+udev /dev devtmpfs rw,nosuid,noexec,relatime,size=1877456k,nr_inodes=469364,mode=755,inode64 0 0
+devpts /dev/pts devpts rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000 0 0
+tmpfs /run tmpfs rw,nosuid,nodev,noexec,relatime,size=385060k,mode=755,inode64 0 0
+/dev/sda5 / ext4 rw,relatime,errors=remount-ro 0 0
+securityfs /sys/kernel/security securityfs rw,nosuid,nodev,noexec,relatime 0 0
+tmpfs /dev/shm tmpfs rw,nosuid,nodev,inode64 0 0
+tmpfs /run/lock tmpfs rw,nosuid,nodev,noexec,relatime,size=5120k,inode64 0 0
+tmpfs /sys/fs/cgroup tmpfs ro,nosuid,nodev,noexec,mode=755,inode64 0 0
+cgroup2 /sys/fs/cgroup/unified cgroup2 rw,nosuid,nodev,noexec,relatime,nsdelegate 0 0
+cgroup /sys/fs/cgroup/systemd cgroup rw,nosuid,nodev,noexec,relatime,xattr,name=systemd 0 0
+pstore /sys/fs/pstore pstore rw,nosuid,nodev,noexec,relatime 0 0
+bpf /sys/fs/bpf bpf rw,nosuid,nodev,noexec,relatime,mode=700 0 0
+cgroup /sys/fs/cgroup/freezer cgroup rw,nosuid,nodev,noexec,relatime,freezer 0 0
+cgroup /sys/fs/cgroup/pids cgroup rw,nosuid,nodev,noexec,relatime,pids 0 0
+cgroup /sys/fs/cgroup/cpu,cpuacct cgroup rw,nosuid,nodev,noexec,relatime,cpu,cpuacct 0 0
+cgroup /sys/fs/cgroup/perf_event cgroup rw,nosuid,nodev,noexec,relatime,perf_event 0 0
+cgroup /sys/fs/cgroup/devices cgroup rw,nosuid,nodev,noexec,relatime,devices 0 0
+cgroup /sys/fs/cgroup/rdma cgroup rw,nosuid,nodev,noexec,relatime,rdma 0 0
+cgroup /sys/fs/cgroup/misc cgroup rw,nosuid,nodev,noexec,relatime,misc 0 0
+cgroup /sys/fs/cgroup/hugetlb cgroup rw,nosuid,nodev,noexec,relatime,hugetlb 0 0
+cgroup /sys/fs/cgroup/memory cgroup rw,nosuid,nodev,noexec,relatime,memory 0 0
+cgroup /sys/fs/cgroup/net_cls,net_prio cgroup rw,nosuid,nodev,noexec,relatime,net_cls,net_prio 0 0
+cgroup /sys/fs/cgroup/cpuset cgroup rw,nosuid,nodev,noexec,relatime,cpuset 0 0
+cgroup /sys/fs/cgroup/blkio cgroup rw,nosuid,nodev,noexec,relatime,blkio 0 0
+systemd-1 /proc/sys/fs/binfmt_misc autofs rw,relatime,fd=28,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=15785 0 0
+debugfs /sys/kernel/debug debugfs rw,nosuid,nodev,noexec,relatime 0 0
+mqueue /dev/mqueue mqueue rw,nosuid,nodev,noexec,relatime 0 0
+hugetlbfs /dev/hugepages hugetlbfs rw,relatime,pagesize=2M 0 0
+tracefs /sys/kernel/tracing tracefs rw,nosuid,nodev,noexec,relatime 0 0
+fusectl /sys/fs/fuse/connections fusectl rw,nosuid,nodev,noexec,relatime 0 0
+configfs /sys/kernel/config configfs rw,nosuid,nodev,noexec,relatime 0 0
+/dev/loop0 /snap/core18/1705 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop2 /snap/bare/5 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop1 /snap/core18/2999 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop3 /snap/core22/2411 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop4 /snap/gnome-3-34-1804/93 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop5 /snap/gnome-3-34-1804/24 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop6 /snap/gnome-42-2204/247 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop7 /snap/gtk-common-themes/1506 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop10 /snap/snap-store/1216 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop8 /snap/gtk-common-themes/1535 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop9 /snap/snap-store/433 squashfs ro,nodev,relatime,errors=continue 0 0
+/dev/loop11 /snap/snapd/26382 squashfs ro,nodev,relatime,errors=continue 0 0
+binfmt_misc /proc/sys/fs/binfmt_misc binfmt_misc rw,nosuid,nodev,noexec,relatime 0 0
+/dev/sda1 /boot/efi vfat rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 0
+DRIRECT_VM /media/sf_DRIRECT_VM vboxsf rw,nodev,relatime,iocharset=utf8,uid=0,gid=999,dmode=0770,fmode=0770,tag=VBoxAutomounter 0 0
+tmpfs /run/user/1000 tmpfs rw,nosuid,nodev,relatime,size=385056k,mode=700,uid=1000,gid=1000,inode64 0 0
+gvfsd-fuse /run/user/1000/gvfs fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000 0 0
+/dev/fuse /run/user/1000/doc fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000 0 0
+tmpfs /run/snapd/ns tmpfs rw,nosuid,nodev,noexec,relatime,size=385060k,mode=755,inode64 0 0
+nsfs /run/snapd/ns/snap-store.mnt nsfs rw 0 0
+tracefs /sys/kernel/debug/tracing tracefs rw,nosuid,nodev,noexec,relatime 0 0
+aflincomp@aflincomp:~$ ^C
+aflincomp@aflincomp:~$ cat /proc/self/mountinfo
+23 28 0:21 / /sys rw,nosuid,nodev,noexec,relatime shared:7 - sysfs sysfs rw
+24 28 0:22 / /proc rw,nosuid,nodev,noexec,relatime shared:14 - proc proc rw
+25 28 0:5 / /dev rw,nosuid,noexec,relatime shared:2 - devtmpfs udev rw,size=1877456k,nr_inodes=469364,mode=755,inode64
+26 25 0:23 / /dev/pts rw,nosuid,noexec,relatime shared:3 - devpts devpts rw,gid=5,mode=620,ptmxmode=000
+27 28 0:24 / /run rw,nosuid,nodev,noexec,relatime shared:5 - tmpfs tmpfs rw,size=385060k,mode=755,inode64
+28 1 8:5 / / rw,relatime shared:1 - ext4 /dev/sda5 rw,errors=remount-ro
+29 23 0:6 / /sys/kernel/security rw,nosuid,nodev,noexec,relatime shared:8 - securityfs securityfs rw
+30 25 0:25 / /dev/shm rw,nosuid,nodev shared:4 - tmpfs tmpfs rw,inode64
+31 27 0:26 / /run/lock rw,nosuid,nodev,noexec,relatime shared:6 - tmpfs tmpfs rw,size=5120k,inode64
+32 23 0:27 / /sys/fs/cgroup ro,nosuid,nodev,noexec shared:9 - tmpfs tmpfs ro,mode=755,inode64
+33 32 0:28 / /sys/fs/cgroup/unified rw,nosuid,nodev,noexec,relatime shared:10 - cgroup2 cgroup2 rw,nsdelegate
+34 32 0:29 / /sys/fs/cgroup/systemd rw,nosuid,nodev,noexec,relatime shared:11 - cgroup cgroup rw,xattr,name=systemd
+35 23 0:30 / /sys/fs/pstore rw,nosuid,nodev,noexec,relatime shared:12 - pstore pstore rw
+36 23 0:31 / /sys/fs/bpf rw,nosuid,nodev,noexec,relatime shared:13 - bpf bpf rw,mode=700
+37 32 0:32 / /sys/fs/cgroup/freezer rw,nosuid,nodev,noexec,relatime shared:15 - cgroup cgroup rw,freezer
+38 32 0:33 / /sys/fs/cgroup/pids rw,nosuid,nodev,noexec,relatime shared:16 - cgroup cgroup rw,pids
+39 32 0:34 / /sys/fs/cgroup/cpu,cpuacct rw,nosuid,nodev,noexec,relatime shared:17 - cgroup cgroup rw,cpu,cpuacct
+40 32 0:35 / /sys/fs/cgroup/perf_event rw,nosuid,nodev,noexec,relatime shared:18 - cgroup cgroup rw,perf_event
+41 32 0:36 / /sys/fs/cgroup/devices rw,nosuid,nodev,noexec,relatime shared:19 - cgroup cgroup rw,devices
+42 32 0:37 / /sys/fs/cgroup/rdma rw,nosuid,nodev,noexec,relatime shared:20 - cgroup cgroup rw,rdma
+43 32 0:38 / /sys/fs/cgroup/misc rw,nosuid,nodev,noexec,relatime shared:21 - cgroup cgroup rw,misc
+44 32 0:39 / /sys/fs/cgroup/hugetlb rw,nosuid,nodev,noexec,relatime shared:22 - cgroup cgroup rw,hugetlb
+45 32 0:40 / /sys/fs/cgroup/memory rw,nosuid,nodev,noexec,relatime shared:23 - cgroup cgroup rw,memory
+46 32 0:41 / /sys/fs/cgroup/net_cls,net_prio rw,nosuid,nodev,noexec,relatime shared:24 - cgroup cgroup rw,net_cls,net_prio
+47 32 0:42 / /sys/fs/cgroup/cpuset rw,nosuid,nodev,noexec,relatime shared:25 - cgroup cgroup rw,cpuset
+48 32 0:43 / /sys/fs/cgroup/blkio rw,nosuid,nodev,noexec,relatime shared:26 - cgroup cgroup rw,blkio
+49 24 0:44 / /proc/sys/fs/binfmt_misc rw,relatime shared:27 - autofs systemd-1 rw,fd=28,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=15785
+50 23 0:7 / /sys/kernel/debug rw,nosuid,nodev,noexec,relatime shared:28 - debugfs debugfs rw
+51 25 0:19 / /dev/mqueue rw,nosuid,nodev,noexec,relatime shared:29 - mqueue mqueue rw
+52 25 0:45 / /dev/hugepages rw,relatime shared:30 - hugetlbfs hugetlbfs rw,pagesize=2M
+53 23 0:12 / /sys/kernel/tracing rw,nosuid,nodev,noexec,relatime shared:31 - tracefs tracefs rw
+54 23 0:46 / /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime shared:32 - fusectl fusectl rw
+55 23 0:20 / /sys/kernel/config rw,nosuid,nodev,noexec,relatime shared:33 - configfs configfs rw
+56 28 7:0 / /snap/core18/1705 ro,nodev,relatime shared:34 - squashfs /dev/loop0 ro,errors=continue
+57 28 7:2 / /snap/bare/5 ro,nodev,relatime shared:35 - squashfs /dev/loop2 ro,errors=continue
+58 28 7:1 / /snap/core18/2999 ro,nodev,relatime shared:36 - squashfs /dev/loop1 ro,errors=continue
+59 28 7:3 / /snap/core22/2411 ro,nodev,relatime shared:37 - squashfs /dev/loop3 ro,errors=continue
+60 28 7:4 / /snap/gnome-3-34-1804/93 ro,nodev,relatime shared:38 - squashfs /dev/loop4 ro,errors=continue
+61 28 7:5 / /snap/gnome-3-34-1804/24 ro,nodev,relatime shared:39 - squashfs /dev/loop5 ro,errors=continue
+62 28 7:6 / /snap/gnome-42-2204/247 ro,nodev,relatime shared:40 - squashfs /dev/loop6 ro,errors=continue
+63 28 7:7 / /snap/gtk-common-themes/1506 ro,nodev,relatime shared:41 - squashfs /dev/loop7 ro,errors=continue
+149 28 7:10 / /snap/snap-store/1216 ro,nodev,relatime shared:85 - squashfs /dev/loop10 ro,errors=continue
+152 28 7:8 / /snap/gtk-common-themes/1535 ro,nodev,relatime shared:87 - squashfs /dev/loop8 ro,errors=continue
+155 28 7:9 / /snap/snap-store/433 ro,nodev,relatime shared:89 - squashfs /dev/loop9 ro,errors=continue
+158 28 7:11 / /snap/snapd/26382 ro,nodev,relatime shared:91 - squashfs /dev/loop11 ro,errors=continue
+441 49 0:48 / /proc/sys/fs/binfmt_misc rw,nosuid,nodev,noexec,relatime shared:93 - binfmt_misc binfmt_misc rw
+161 28 8:1 / /boot/efi rw,relatime shared:95 - vfat /dev/sda1 rw,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro
+951 28 0:52 / /media/sf_DRIRECT_VM rw,nodev,relatime shared:527 - vboxsf DRIRECT_VM rw,iocharset=utf8,uid=0,gid=999,dmode=0770,fmode=0770,tag=VBoxAutomounter
+1674 27 0:56 / /run/user/1000 rw,nosuid,nodev,relatime shared:937 - tmpfs tmpfs rw,size=385056k,mode=700,uid=1000,gid=1000,inode64
+1704 1674 0:57 / /run/user/1000/gvfs rw,nosuid,nodev,relatime shared:953 - fuse.gvfsd-fuse gvfsd-fuse rw,user_id=1000,group_id=1000
+1734 1674 0:58 / /run/user/1000/doc rw,nosuid,nodev,relatime shared:969 - fuse /dev/fuse rw,user_id=1000,group_id=1000
+1764 27 0:24 /snapd/ns /run/snapd/ns rw,nosuid,nodev,noexec,relatime - tmpfs tmpfs rw,size=385060k,mode=755,inode64
+2286 1764 0:4 mnt:[4026532487] /run/snapd/ns/snap-store.mnt rw - nsfs nsfs rw
+818 50 0:12 / /sys/kernel/debug/tracing rw,nosuid,nodev,noexec,relatime shared:459 - tracefs tracefs rw
+aflincomp@aflincomp:~$ sudo mkdir -p /mnt/test-tmpfs /mnt/test-bind
+aflincomp@aflincomp:~$ sudo mount -t tmpfs -o size=100M tmpfs /mnt/test-tmpfs
+aflincomp@aflincomp:~$ df -h /mnt/test-tmpfs
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           100M     0  100M   0% /mnt/test-tmpfs
+aflincomp@aflincomp:~$ echo 'data sementara' > /mnt/test-tmpfs/coba.txt
+aflincomp@aflincomp:~$ ls /mnt/test-tmpfs
+coba.txt
+aflincomp@aflincomp:~$ sudo mount --bind /etc /mnt/test-bind
+aflincomp@aflincomp:~$ ls /mnt/test-bind
+acpi                    ca-certificates.conf           dpkg           grub.d           kernel           machine-id           openvpn                  python3.8      shadow-            ucf.conf
+adduser.conf            ca-certificates.conf.dpkg-old  e2scrub.conf   gshadow          kernel-img.conf  magic                opt                      rc0.d          shells             udev
+alsa                    calendar                       emacs          gshadow-         kerneloops.conf  magic.mime           os-release               rc1.d          skel               udisks2
+alternatives            chatscripts                    environment    gss              ldap             mailcap              PackageKit               rc2.d          smi.conf           ufw
+anacrontab              console-setup                  environment.d  gtk-2.0          ld.so.cache      mailcap.order        pam.conf                 rc3.d          snmp               update-manager
+apg.conf                cracklib                       ethertypes     gtk-3.0          ld.so.conf       manpath.config       pam.d                    rc4.d          speech-dispatcher  update-motd.d
+apm                     cron.d                         firefox        hdparm.conf      ld.so.conf.d     mdadm                papersize                rc5.d          ssh                update-notifier
+apparmor                cron.daily                     fonts          host.conf        legal            mime.types           passwd                   rc6.d          ssl                UPower
+apparmor.d              cron.hourly                    fprintd.conf   hostid           libao.conf       mke2fs.conf          passwd-                  rcS.d          subgid             usb_modeswitch.conf
+apport                  cron.monthly                   fstab          hostname         libaudit.conf    modprobe.d           pcmcia                   resolv.conf    subgid-            usb_modeswitch.d
+appstream.conf          crontab                        fuse.conf      hosts            libblockdev      modules              perl                     rmt            subuid             vim
+apt                     cron.weekly                    fwupd          hosts.allow      libnl-3          modules-load.d       pki                      rpc            subuid-            vtrgb
+avahi                   cups                           gai.conf       hosts.deny       libpaper.d       mtab                 pm                       rsyslog.conf   sudoers            vulkan
+bash.bashrc             cupshelpers                    gamemode.ini   hp               libreoffice      mtools.conf          pnm2ppa.conf             rsyslog.d      sudoers.d          wgetrc
+bash_completion         dbus-1                         gdb            ifplugd          locale.alias     mysql                polkit-1                 rygel.conf     sysctl.conf        wireshark
+bash_completion.d       dconf                          gdm3           init             locale.gen       nanorc               popularity-contest.conf  sane.d         sysctl.d           wpa_supplicant
+bindresvport.blacklist  debconf.conf                   geoclue        init.d           localtime        netplan              ppp                      security       systemd            X11
+binfmt.d                debian_version                 ghostscript    initramfs-tools  logcheck         network              printcap                 selinux        terminfo           xattr.conf
+bluetooth               default                        glvnd          inputrc          login.defs       networkd-dispatcher  profile                  sensors3.conf  thermald           xdg
+brlapi.key              deluser.conf                   gnome          insserv.conf.d   logrotate.conf   NetworkManager       profile.d                sensors.d      thunderbird        xml
+brltty                  depmod.d                       groff          iproute2         logrotate.d      networks             protocols                services       timezone           zsh_command_not_found
+brltty.conf             dhcp                           group          issue            lsb-release      newt                 pulse                    sgml           tmpfiles.d
+ca-certificates         dictionaries-common            group-         issue.net        ltrace.conf      nsswitch.conf        python3                  shadow         ubuntu-advantage
+aflincomp@aflincomp:~$ sudo umount /mnt/test-tmpfs
+aflincomp@aflincomp:~$ sudo umount /mnt/test-bind
+aflincomp@aflincomp:~$ ls /mnt/test-tmpfs
+aflincomp@aflincomp:~$ cd ~/praktikum-p4
+aflincomp@aflincomp:~/praktikum-p4$ dd if=/dev/zero of=virtual_disk.img bs=1M count=512 status=progress
+262144000 bytes (262 MB, 250 MiB) copied, 1 s, 261 MB/s
+512+0 records in
+512+0 records out
+536870912 bytes (537 MB, 512 MiB) copied, 1.99213 s, 269 MB/s
+aflincomp@aflincomp:~/praktikum-p4$ ls -lh virtual_disk.img
+-rw-rw-r-- 1 aflincomp aflincomp 512M พ.ค.   6 06:49 virtual_disk.img
+aflincomp@aflincomp:~/praktikum-p4$ file virtual_disk.img
+virtual_disk.img: data
+aflincomp@aflincomp:~/praktikum-p4$ sudo losetup -f virtual_disk.img
+aflincomp@aflincomp:~/praktikum-p4$ sudo losetup -a
+/dev/loop1: [2053]:678985 (/var/lib/snapd/snaps/core18_2999.snap)
+/dev/loop8: [2053]:678693 (/var/lib/snapd/snaps/gtk-common-themes_1535.snap)
+/dev/loop6: [2053]:679113 (/var/lib/snapd/snaps/gnome-42-2204_247.snap)
+/dev/loop4: [2053]:678952 (/var/lib/snapd/snaps/gnome-3-34-1804_93.snap)
+/dev/loop11: [2053]:667790 (/var/lib/snapd/snaps/snapd_26382.snap)
+/dev/loop2: [2053]:678930 (/var/lib/snapd/snaps/bare_5.snap)
+/dev/loop0: [2053]:675211 (/var/lib/snapd/snaps/core18_1705.snap)
+/dev/loop9: [2053]:675214 (/var/lib/snapd/snaps/snap-store_433.snap)
+/dev/loop7: [2053]:675213 (/var/lib/snapd/snaps/gtk-common-themes_1506.snap)
+/dev/loop5: [2053]:675212 (/var/lib/snapd/snaps/gnome-3-34-1804_24.snap)
+/dev/loop12: [2053]:1311107 (/home/aflincomp/praktikum-p4/virtual_disk.img)
+/dev/loop3: [2053]:678755 (/var/lib/snapd/snaps/core22_2411.snap)
+/dev/loop10: [2053]:678660 (/var/lib/snapd/snaps/snap-store_1216.snap)
+aflincomp@aflincomp:~/praktikum-p4$ echo $LOOP_DEV
+aflincomp@aflincomp:~/praktikum-p4$ LOOP_DEV=$(sudo losetup -j virtual_disk.img | cut -d: -f1)
+aflincomp@aflincomp:~/praktikum-p4$ echo $LOOP_DEV
+/dev/loop12
+aflincomp@aflincomp:~/praktikum-p4$ sudo fdisk $LOOP_DEV
+Welcome to fdisk (util-linux 2.34).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0x9ec732ea.
+Command (m for help): g
+Created a new GPT disklabel (GUID: 7AC5C2D0-CCF8-7A44-AC0A-CC26F0381D9A).
+Command (m for help): n
+Partition number (1-128, default 1): 
+First sector (2048-1048542, default 2048): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-1048542, default 1048542): +50M
+Created a new partition 1 of type 'Linux filesystem' and of size 50 MiB.
+Command (m for help): t
+Selected partition 1
+Partition type (type L to list all types): 1
+Changed type of partition 'Linux filesystem' to 'EFI System'.
+Command (m for help): n
+Partition number (2-128, default 2): 
+First sector (104448-1048542, default 104448): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (104448-1048542, default 1048542): +100M
+Created a new partition 2 of type 'Linux filesystem' and of size 100 MiB.
+Command (m for help): t
+Partition number (1,2, default 2): 
+Partition type (type L to list all types): 19
+Changed type of partition 'Linux filesystem' to 'Linux swap'.
+Command (m for help): n
+Partition number (3-128, default 3): 
+First sector (309248-1048542, default 309248): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (309248-1048542, default 1048542): 
+Created a new partition 3 of type 'Linux filesystem' and of size 361 MiB.
+Command (m for help): p
+Disk /dev/loop12: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 7AC5C2D0-CCF8-7A44-AC0A-CC26F0381D9A
+Device         Start     End Sectors  Size Type
+/dev/loop12p1   2048  104447  102400   50M EFI System
+/dev/loop12p2 104448  309247  204800  100M Linux swap
+/dev/loop12p3 309248 1048542  739295  361M Linux filesystem
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Re-reading the partition table failed.: Invalid argument
+The kernel still uses the old table. The new table will be used at the next reboot or after you run partprobe(8) or kpartx(8).
+aflincomp@aflincomp:~/praktikum-p4$ sudo partprobe $LOOP_DEV
+aflincomp@aflincomp:~/praktikum-p4$ lsblk $LOOP_DEV
+NAME       MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+loop12       7:12   0  512M  0 loop 
+├─loop12p1 259:0    0   50M  0 part 
+├─loop12p2 259:1    0  100M  0 part 
+└─loop12p3 259:2    0  361M  0 part 
+aflincomp@aflincomp:~/praktikum-p4$ sudo fdisk -l $LOOP_DEV
+Disk /dev/loop12: 512 MiB, 536870912 bytes, 1048576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 7AC5C2D0-CCF8-7A44-AC0A-CC26F0381D9A
+Device         Start     End Sectors  Size Type
+/dev/loop12p1   2048  104447  102400   50M EFI System
+/dev/loop12p2 104448  309247  204800  100M Linux swap
+/dev/loop12p3 309248 1048542  739295  361M Linux filesystem
+aflincomp@aflincomp:~/praktikum-p4$ sudo mkfs.vfat -F32 ${LOOP_DEV}p1
+mkfs.fat 4.1 (2017-01-24)
+aflincomp@aflincomp:~/praktikum-p4$ sudo mkswap ${LOOP_DEV}p2
+Setting up swapspace version 1, size = 100 MiB (104853504 bytes)
+no label, UUID=1a9a0a52-a72e-417e-a707-3b3e83359450
+aflincomp@aflincomp:~/praktikum-p4$ sudo mkfs.ext4 -L 'DATA_VOL' ${LOOP_DEV}p3
+mke2fs 1.45.5 (07-Jan-2020)
+Discarding device blocks: done                            
+Creating filesystem with 92411 4k blocks and 92448 inodes
+Filesystem UUID: 82d9107c-d74e-409d-aeaf-de9156e2f1db
+Superblock backups stored on blocks: 
+	32768
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: done
+aflincomp@aflincomp:~/praktikum-p4$ sudo mkdir -p /mnt/vdisk-data
+aflincomp@aflincomp:~/praktikum-p4$ sudo mount ${LOOP_DEV}p3 /mnt/vdisk-data
+aflincomp@aflincomp:~/praktikum-p4$ df -h /mnt/vdisk-data
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop12p3   334M   24K  309M   1% /mnt/vdisk-data
+aflincomp@aflincomp:~/praktikum-p4$ mount | grep vdisk
+/dev/loop12p3 on /mnt/vdisk-data type ext4 (rw,relatime)
+aflincomp@aflincomp:~/praktikum-p4$ cd /mnt/vdisk-data
+aflincomp@aflincomp:/mnt/vdisk-data$ sudo mkdir -p project/{src,docs,tests}
+aflincomp@aflincomp:/mnt/vdisk-data$ sudo dd if=/dev/urandom of=project/bigfile.bin bs=1M count=50
+50+0 records in
+50+0 records out
+52428800 bytes (52 MB, 50 MiB) copied, 0.302502 s, 173 MB/s
+aflincomp@aflincomp:/mnt/vdisk-data$ sudo dd if=/dev/urandom of=project/src/app.bin bs=1M count=20
+20+0 records in
+20+0 records out
+20971520 bytes (21 MB, 20 MiB) copied, 0.126575 s, 166 MB/s
+aflincomp@aflincomp:/mnt/vdisk-data$ echo 'README' | sudo tee project/docs/readme.txt
+README
+aflincomp@aflincomp:/mnt/vdisk-data$ sudo mkdir -p /mnt/vdisk-data
+aflincomp@aflincomp:/mnt/vdisk-data$ sudo mount ${LOOP_DEV}p3 /mnt/vdisk-data
+mount: /mnt/vdisk-data: /dev/loop12p3 already mounted on /mnt/vdisk-data.
+aflincomp@aflincomp:/mnt/vdisk-data$ df -h /mnt/vdisk-data
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop12p3   334M   71M  238M  23% /mnt/vdisk-data
+aflincomp@aflincomp:/mnt/vdisk-data$ mount | grep vdisk
+/dev/loop12p3 on /mnt/vdisk-data type ext4 (rw,relatime)
+aflincomp@aflincomp:/mnt/vdisk-data$ cd /mnt/vdisk-data
+aflincomp@aflincomp:/mnt/vdisk-data$ sudo mkdir -p project/{src,docs,tests}
+aflincomp@aflincomp:/mnt/vdisk-data$ sudo dd if=/dev/urandom of=project/bigfile.bin bs=1M count=50
+50+0 records in
+50+0 records out
+52428800 bytes (52 MB, 50 MiB) copied, 0.339038 s, 155 MB/s
+aflincomp@aflincomp:/mnt/vdisk-data$ sudo dd if=/dev/urandom of=project/src/app.bin bs=1M count=20
+20+0 records in
+20+0 records out
+20971520 bytes (21 MB, 20 MiB) copied, 0.162667 s, 129 MB/s
+aflincomp@aflincomp:/mnt/vdisk-data$ echo 'README' | sudo tee project/docs/readme.txt
+README
+aflincomp@aflincomp:/mnt/vdisk-data$ df -h /mnt/vdisk-data
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop12p3   334M   71M  238M  23% /mnt/vdisk-data
+aflincomp@aflincomp:/mnt/vdisk-data$ du -sh /mnt/vdisk-data/*
+du: cannot read directory '/mnt/vdisk-data/lost+found': Permission denied
+16K	/mnt/vdisk-data/lost+found
+71M	/mnt/vdisk-data/project
+aflincomp@aflincomp:/mnt/vdisk-data$ du -sh /mnt/vdisk-data/project/*
+50M	/mnt/vdisk-data/project/bigfile.bin
+8.0K	/mnt/vdisk-data/project/docs
+21M	/mnt/vdisk-data/project/src
+4.0K	/mnt/vdisk-data/project/tests
+aflincomp@aflincomp:/mnt/vdisk-data$ df -i /mnt/vdisk-data
+Filesystem     Inodes IUsed IFree IUse% Mounted on
+/dev/loop12p3   92448    18 92430    1% /mnt/vdisk-data
+aflincomp@aflincomp:/mnt/vdisk-data$ cd ~
+aflincomp@aflincomp:~$ sudo umount /mnt/vdisk-data
+aflincomp@aflincomp:~$ sudo losetup -d $LOOP_DEV
+aflincomp@aflincomp:~$ cd ~/praktikum-p4
+aflincomp@aflincomp:~/praktikum-p4$ mkdir -p security/{public,private,shared,scripts}
+aflincomp@aflincomp:~/praktikum-p4$ echo 'dokumen publik' > security/public/readme.txt
+aflincomp@aflincomp:~/praktikum-p4$ echo 'data rahasia' > security/private/secret.txt
+aflincomp@aflincomp:~/praktikum-p4$ echo '#!/bin/bash echo Hello World' > security/scripts/greet.sh
+aflincomp@aflincomp:~/praktikum-p4$ echo 'data bersama' > security/shared/data.csv
+aflincomp@aflincomp:~/praktikum-p4$ ls -laR security/
+security/:
+total 24
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 .
+drwxrwxr-x 3 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 private
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 public
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 scripts
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 shared
+security/private:
+total 12
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 .
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+-rw-rw-r-- 1 aflincomp aflincomp   13 พ.ค.   6 07:06 secret.txt
+security/public:
+total 12
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 .
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+-rw-rw-r-- 1 aflincomp aflincomp   15 พ.ค.   6 07:06 readme.txt
+security/scripts:
+total 12
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 .
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+-rw-rw-r-- 1 aflincomp aflincomp   29 พ.ค.   6 07:06 greet.sh
+security/shared:
+total 12
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 .
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+-rw-rw-r-- 1 aflincomp aflincomp   13 พ.ค.   6 07:06 data.csv
+aflincomp@aflincomp:~/praktikum-p4$ chmod 755 security/public
+aflincomp@aflincomp:~/praktikum-p4$ chmod 700 security/private
+aflincomp@aflincomp:~/praktikum-p4$ chmod 775 security/shared
+aflincomp@aflincomp:~/praktikum-p4$ chmod 644 security/public/readme.txt
+aflincomp@aflincomp:~/praktikum-p4$ chmod 600 security/private/secret.txt
+aflincomp@aflincomp:~/praktikum-p4$ chmod 755 security/scripts/greet.sh
+aflincomp@aflincomp:~/praktikum-p4$ ls -laR security/
+security/:
+total 24
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 .
+drwxrwxr-x 3 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+drwx------ 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 private
+drwxr-xr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 public
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 scripts
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 shared
+security/private:
+total 12
+drwx------ 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 .
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+-rw------- 1 aflincomp aflincomp   13 พ.ค.   6 07:06 secret.txt
+security/public:
+total 12
+drwxr-xr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 .
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+-rw-r--r-- 1 aflincomp aflincomp   15 พ.ค.   6 07:06 readme.txt
+security/scripts:
+total 12
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 .
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+-rwxr-xr-x 1 aflincomp aflincomp   29 พ.ค.   6 07:06 greet.sh
+security/shared:
+total 12
+drwxrwxr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:06 .
+drwxrwxr-x 6 aflincomp aflincomp 4096 พ.ค.   6 07:05 ..
+-rw-rw-r-- 1 aflincomp aflincomp   13 พ.ค.   6 07:06 data.csv
+aflincomp@aflincomp:~/praktikum-p4$ cat ./security/scripts/greet.sh
+#!/bin/bash echo Hello World
+aflincomp@aflincomp:~/praktikum-p4$ #!/bin/bash
+aflincomp@aflincomp:~/praktikum-p4$ echo "Hello, ini adalah skrip greet.sh!"
+Hello, ini adalah skrip greet.sh!
+aflincomp@aflincomp:~/praktikum-p4$ echo "Status: Berhasil dijalankan dengan akses root."
+Status: Berhasil dijalankan dengan akses root.
+aflincomp@aflincomp:~/praktikum-p4$ sudo sed -i 's/\r$//' ./security/scripts/greet.sh
+aflincomp@aflincomp:~/praktikum-p4$ sudo bash -c 'echo -e "#!/bin/bash\necho \"Halo Sechan, Selamat Praktikum!\"\necho \"Waktu: \$(date)\"" > ./security/scripts/greet.sh'
+aflincomp@aflincomp:~/praktikum-p4$ sudo bash ./security/scripts/greet.sh
+Halo Sechan, Selamat Praktikum!
+Waktu: พ.  6 พ.ค. 2569 07:11:06 +07
+aflincomp@aflincomp:~/praktikum-p4$ ./security/scripts/greet.sh
+Halo Sechan, Selamat Praktikum!
+Waktu: พ.  6 พ.ค. 2569 07:11:22 +07
+aflincomp@aflincomp:~/praktikum-p4$ cat > security/scripts/read_secret.sh << 'EOF'
+> #!/bin/bash
+> # Script ini baca file private (simulasi SUID concept)
+> echo 'Menjalankan dengan UID: '$(id -u)
+> cat ~/praktikum-p4/security/private/secret.txt 2>/dev/null || echo 'Akses
+> ditolak'
+> EOF
+aflincomp@aflincomp:~/praktikum-p4$ chmod 755 security/scripts/read_secret.sh
+aflincomp@aflincomp:~/praktikum-p4$ mkdir security/uploads
+aflincomp@aflincomp:~/praktikum-p4$ chmod 1777 security/uploads
+aflincomp@aflincomp:~/praktikum-p4$ ls -ld security/uploads
+drwxrwxrwt 2 aflincomp aflincomp 4096 พ.ค.   6 07:12 security/uploads
+aflincomp@aflincomp:~/praktikum-p4$ mkdir security/teamproject
+aflincomp@aflincomp:~/praktikum-p4$ chmod 2775 security/teamproject
+aflincomp@aflincomp:~/praktikum-p4$ ls -ld security/teamproject
+drwxrwsr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:12 security/teamproject
+aflincomp@aflincomp:~/praktikum-p4$ touch security/teamproject/new_file.txt
+aflincomp@aflincomp:~/praktikum-p4$ ls -l security/teamproject/
+total 0
+-rw-rw-r-- 1 aflincomp aflincomp 0 พ.ค.   6 07:12 new_file.txt
+aflincomp@aflincomp:~/praktikum-p4$ ls -la security/uploads security/teamproject
+security/teamproject:
+total 8
+drwxrwsr-x 2 aflincomp aflincomp 4096 พ.ค.   6 07:12 .
+drwxrwxr-x 8 aflincomp aflincomp 4096 พ.ค.   6 07:12 ..
+-rw-rw-r-- 1 aflincomp aflincomp    0 พ.ค.   6 07:12 new_file.txt
+security/uploads:
+total 8
+drwxrwxrwt 2 aflincomp aflincomp 4096 พ.ค.   6 07:12 .
+drwxrwxr-x 8 aflincomp aflincomp 4096 พ.ค.   6 07:12 ..
+aflincomp@aflincomp:~/praktikum-p4$ tune2fs -l $(df / | tail -1 | awk '{print $1}') | grep -i 'features'
+tune2fs: Permission denied while trying to open /dev/sda5
+Couldn't find valid filesystem superblock.
+aflincomp@aflincomp:~/praktikum-p4$ echo 'laporan keuangan Q4 2024' > security/shared/laporan_keuangan.txt
+aflincomp@aflincomp:~/praktikum-p4$ chmod 640 security/shared/laporan_keuangan.txt # hanya owner + group
+aflincomp@aflincomp:~/praktikum-p4$ getfacl security/shared/laporan_keuangan.txt
+# file: security/shared/laporan_keuangan.txt
+# owner: aflincomp
+# group: aflincomp
+user::rw-
+group::r--
+other::---
+aflincomp@aflincomp:~/praktikum-p4$ setfacl -m u:nobody:r security/shared/laporan_keuangan.txt
+aflincomp@aflincomp:~/praktikum-p4$ getfacl security/shared/laporan_keuangan.txt
+# file: security/shared/laporan_keuangan.txt
+# owner: aflincomp
+# group: aflincomp
+user::rw-
+user:nobody:r--
+group::r--
+mask::r--
+other::---
+aflincomp@aflincomp:~/praktikum-p4$ ls -l security/shared/laporan_keuangan.txt # '+' di akhir = ada ACL
+-rw-r-----+ 1 aflincomp aflincomp 25 พ.ค.   6 07:13 security/shared/laporan_keuangan.txt
+aflincomp@aflincomp:~/praktikum-p4$ setfacl -d -m u:nobody:r security/shared/ # -d = default
+aflincomp@aflincomp:~/praktikum-p4$ getfacl security/shared/
+# file: security/shared/
+# owner: aflincomp
+# group: aflincomp
+user::rwx
+group::rwx
+other::r-x
+default:user::rwx
+default:user:nobody:r--
+default:group::rwx
+default:mask::rwx
+default:other::r-x
+aflincomp@aflincomp:~/praktikum-p4$ touch security/shared/file_baru.txt
+aflincomp@aflincomp:~/praktikum-p4$ getfacl security/shared/file_baru.txt
+# file: security/shared/file_baru.txt
+# owner: aflincomp
+# group: aflincomp
+user::rw-
+user:nobody:r--
+group::rwx			#effective:rw-
+mask::rw-
+other::r--
+aflincomp@aflincomp:~/praktikum-p4$ setfacl -b security/shared/laporan_keuangan.txt
+aflincomp@aflincomp:~/praktikum-p4$ setfacl -k security/shared/
+aflincomp@aflincomp:~/praktikum-p4$ 
+
+
+
+
+
+
+
+
+
+
+
+
